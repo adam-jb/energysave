@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cut Your Electricity Bill in Half | Home Battery Storage from £58/month</title>
-<meta name="description" content="No upfront costs. £58/month for 10 years. Smart home battery stores cheap off-peak electricity so you use less from the grid at peak prices. Own it after 10 years and save forever.">
+<title>Cut Your Electricity Bill in Half | Home Battery Storage from £42/month</title>
+<meta name="description" content="No upfront costs. £42/month for 10 years. Smart home battery stores cheap off-peak electricity so you use less from the grid at peak prices. Own it after 10 years and save forever.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
@@ -606,56 +606,141 @@ section {
   border-radius: 16px;
   padding: 32px;
 }
-.bar-chart {
-  display: flex;
-  gap: 32px;
-  align-items: flex-end;
-  height: 220px;
-  margin-bottom: 24px;
-  padding: 0 20px;
-}
-.bar-group {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  justify-content: flex-end;
-}
-.bar {
-  width: 100%;
-  max-width: 100px;
-  border-radius: 8px 8px 0 0;
-  position: relative;
-  transition: height 0.8s ease;
-}
-.bar-without {
-  background: linear-gradient(180deg, #ef4444, #dc2626);
-  height: 100%;
-}
-.bar-with {
-  background: linear-gradient(180deg, var(--green-400), var(--green-600));
-  height: 52%;
-}
-.bar-label {
+.comparison-chart { }
+.comparison-title {
   font-size: 0.8rem;
-  color: var(--warm-500);
-  margin-top: 12px;
-  text-align: center;
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--warm-400);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 28px;
 }
-.bar-value {
-  position: absolute;
-  top: -28px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Fraunces', serif;
+.comparison-bars { display: flex; flex-direction: column; gap: 24px; }
+.comp-bar-group { }
+.comp-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--warm-700);
+  margin-bottom: 8px;
+}
+.comp-bar-track {
+  display: flex;
+  height: 52px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--warm-100);
+}
+.comp-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+}
+.comp-bar-text {
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
+  color: var(--white);
   white-space: nowrap;
 }
-.bar-without .bar-value { color: #dc2626; }
-.bar-with .bar-value { color: var(--green-600); }
+.comp-bar-old {
+  background: linear-gradient(135deg, #78716c, #57534e);
+  border-radius: 10px;
+}
+.comp-bar-new {
+  background: linear-gradient(135deg, var(--green-400), var(--green-600));
+  border-radius: 10px 0 0 10px;
+}
+.comp-bar-sub {
+  background: linear-gradient(135deg, #8b9fad, #6b7f8d);
+  border-radius: 0 10px 10px 0;
+  border-left: 2px solid rgba(255,255,255,0.3);
+}
+.comp-sublabel {
+  font-size: 0.75rem;
+  color: var(--warm-400);
+  margin-top: 6px;
+}
+.comp-bar-labels {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+}
+.comp-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.comp-tag-elec {
+  background: var(--green-100);
+  color: var(--green-700);
+}
+.comp-tag-sub {
+  background: #e8eef2;
+  color: #5a6f7d;
+}
+.comp-total {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--warm-200);
+}
+.comp-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 0.9rem;
+  color: var(--warm-600);
+}
+.comp-total-value {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--warm-800);
+}
+.comp-saving-row {
+  background: var(--green-50);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-top: 8px;
+}
+.comp-saving-value {
+  font-weight: 700;
+  color: var(--green-700);
+  font-size: 0.85rem;
+}
+.comp-neutral-row {
+  background: var(--warm-100);
+}
+.comp-neutral-row .comp-saving-value {
+  color: var(--warm-600);
+}
+/* Toggle */
+.toggle-wrap {
+  display: inline-flex;
+  background: var(--warm-200);
+  border-radius: 10px;
+  padding: 4px;
+  margin-top: 28px;
+  margin-bottom: 8px;
+}
+.toggle-btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--warm-500);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.toggle-btn.active {
+  background: var(--white);
+  color: var(--green-700);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
 .savings-badge {
   display: flex;
   align-items: center;
@@ -1095,9 +1180,9 @@ footer {
       <div>
         <div class="hero-badge">Now accepting waitlist sign-ups</div>
         <h1>Cut your electricity bill <span>in half.</span></h1>
-        <p class="hero-sub">A smart home battery that charges when electricity is cheap and powers your home when it's expensive. Lock in low energy costs today — and stop worrying about the next price hike.</p>
+        <p class="hero-sub">A smart home battery that charges when electricity is cheap and powers your home when it's expensive. Save up to £38/month from day one, own the battery after 10 years, then pocket £60+/month — forever. Lock in low energy costs and stop worrying about the next price hike.</p>
         <div class="hero-price">
-          <span class="pound">£58</span>
+          <span class="pound">£42</span>
           <span class="period">/month for 10 years*</span>
         </div>
         <p class="hero-price-note">Then you own the battery — and keep saving. Forever.</p>
@@ -1108,7 +1193,7 @@ footer {
           </a>
           <a href="#how-it-works" class="btn-secondary">See How It Works</a>
         </div>
-        <p class="hero-loan-note">*£58/month based on an unsecured personal loan at 9.8% APR over 10 years, covering the full cost of battery, installation, warranty and maintenance. You own the battery.</p>
+        <p class="hero-loan-note">*£42/month based on an unsecured personal loan at 9.8% APR over 10 years, covering the full £3,300 cost of battery, installation, warranty and maintenance. You take out the loan — you own the battery.</p>
       </div>
       <div class="hero-image">
         <!-- Inline SVG illustration of a battery in a home -->
@@ -1179,7 +1264,7 @@ footer {
           <div class="stat-divider"></div>
           <div>
             <div class="stat-value">~50%</div>
-            <div class="stat-label">Bill reduction</div>
+            <div class="stat-label">Lower electricity bill</div>
           </div>
         </div>
       </div>
@@ -1363,59 +1448,158 @@ footer {
   <div class="container">
     <div class="section-label">The maths</div>
     <h2 class="section-title">How the savings stack up</h2>
-    <p class="section-desc">Based on real Octopus Agile tariff pricing and typical UK household consumption patterns.</p>
+    <p class="section-desc">Based on real Octopus Agile tariff pricing and UK household consumption data. Choose your household type.</p>
+
+    <!-- Toggle -->
+    <div class="toggle-wrap">
+      <button class="toggle-btn active" onclick="showScenario('typical')" id="btn-typical">Typical 4-bedroom house</button>
+      <button class="toggle-btn" onclick="showScenario('high')" id="btn-high">Higher consumer</button>
+    </div>
+
     <div class="savings-grid">
-      <div class="savings-visual fade-in">
-        <div class="bar-chart">
-          <div class="bar-group">
-            <div class="bar bar-without">
-              <div class="bar-value">£136</div>
+
+      <!-- TYPICAL 4-BED SCENARIO -->
+      <div class="savings-visual fade-in" id="scenario-typical">
+        <div class="comparison-chart">
+          <div class="comparison-title">Typical 4-bedroom house, per month</div>
+          <div class="comparison-bars">
+            <div class="comp-bar-group">
+              <div class="comp-label">Current electricity bill</div>
+              <div class="comp-bar-track">
+                <div class="comp-bar comp-bar-old" style="width: 100%">
+                  <span class="comp-bar-text">£122/month</span>
+                </div>
+              </div>
+              <div class="comp-sublabel">Ofgem price cap (27.7p/kWh), 4,500 kWh/year</div>
             </div>
-            <div class="bar-label">Without battery</div>
+            <div class="comp-bar-group">
+              <div class="comp-label">With EnergySave</div>
+              <div class="comp-bar-track">
+                <div class="comp-bar comp-bar-new" style="width: 51%">
+                  <span class="comp-bar-text">£62</span>
+                </div>
+                <div class="comp-bar comp-bar-sub" style="width: 34%">
+                  <span class="comp-bar-text">+ £42</span>
+                </div>
+              </div>
+              <div class="comp-bar-labels">
+                <span class="comp-tag comp-tag-elec">New electricity bill</span>
+                <span class="comp-tag comp-tag-sub">EnergySave payment</span>
+              </div>
+            </div>
           </div>
-          <div class="bar-group">
-            <div class="bar bar-with">
-              <div class="bar-value">£71</div>
+          <div class="comp-total">
+            <div class="comp-total-row">
+              <span>Your new total</span>
+              <span class="comp-total-value">£104/month</span>
             </div>
-            <div class="bar-label">With battery</div>
+            <div class="comp-total-row comp-saving-row">
+              <span>You save from day one</span>
+              <span class="comp-saving-value">£18/month — cash-flow positive immediately</span>
+            </div>
+            <div class="comp-total-row comp-saving-row" style="margin-top: 4px;">
+              <span>After year 10</span>
+              <span class="comp-saving-value">Save £60/month — yours to keep forever</span>
+            </div>
           </div>
         </div>
-        <div class="savings-badge">
+        <div class="savings-badge" style="margin-top: 16px;">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-          Typical monthly electricity bill comparison
+          After 10 years: no more payments, £60/month goes straight into your pocket
         </div>
       </div>
+
+      <!-- HIGH CONSUMER SCENARIO (hidden by default) -->
+      <div class="savings-visual fade-in" id="scenario-high" style="display:none;">
+        <div class="comparison-chart">
+          <div class="comparison-title">Higher consumer household, per month</div>
+          <div class="comparison-bars">
+            <div class="comp-bar-group">
+              <div class="comp-label">Current electricity bill</div>
+              <div class="comp-bar-track">
+                <div class="comp-bar comp-bar-old" style="width: 100%">
+                  <span class="comp-bar-text">£157/month</span>
+                </div>
+              </div>
+              <div class="comp-sublabel">Ofgem price cap (27.7p/kWh), 6,000 kWh/year</div>
+            </div>
+            <div class="comp-bar-group">
+              <div class="comp-label">With EnergySave</div>
+              <div class="comp-bar-track">
+                <div class="comp-bar comp-bar-new" style="width: 49%">
+                  <span class="comp-bar-text">£77</span>
+                </div>
+                <div class="comp-bar comp-bar-sub" style="width: 27%">
+                  <span class="comp-bar-text">+ £42</span>
+                </div>
+              </div>
+              <div class="comp-bar-labels">
+                <span class="comp-tag comp-tag-elec">New electricity bill</span>
+                <span class="comp-tag comp-tag-sub">EnergySave payment</span>
+              </div>
+            </div>
+          </div>
+          <div class="comp-total">
+            <div class="comp-total-row">
+              <span>Your new total</span>
+              <span class="comp-total-value">£119/month</span>
+            </div>
+            <div class="comp-total-row comp-saving-row">
+              <span>You save from day one</span>
+              <span class="comp-saving-value">£38/month — cash-flow positive immediately</span>
+            </div>
+            <div class="comp-total-row comp-saving-row" style="margin-top: 4px;">
+              <span>After year 10</span>
+              <span class="comp-saving-value">Save £80/month — yours to keep forever</span>
+            </div>
+          </div>
+        </div>
+        <div class="savings-badge" style="margin-top: 16px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          Saves £38/month from day one. After 10 years: £80/month pure savings forever.
+        </div>
+      </div>
+
+      <!-- EXPLANATION (shared, updates with toggle) -->
       <div class="savings-explanation fade-in">
-        <h3>Where the 50% comes from</h3>
-        <p>A typical UK household uses about 58% of electricity during peak hours (38p/kWh on Agile) and 42% off-peak (17p/kWh). With a battery, you shift most of that expensive peak consumption to cheap off-peak rates.</p>
-        <div class="calc-table">
+        <h3 id="savings-title">The real maths — typical 4-bedroom house</h3>
+        <p id="savings-intro">A typical 4-bed UK household uses around 4,500 kWh of electricity per year. At the current Ofgem price cap (27.7p/kWh), that's roughly £122/month. With a battery on Octopus Agile, you charge at the cheapest overnight rates and avoid expensive peak pricing — cutting the electricity portion of your bill in half.</p>
+        <div class="calc-table" id="calc-table">
+          <!-- Sources: Ofgem TDCV high usage = 4,100 kWh; Energy-Review.co.uk 4-bed range = 3,500-4,500 kWh;
+               One Utility Bill 4-bed high usage = 4,100 kWh; 6,000 kWh = EV/heat pump household;
+               Agile average peak ~35.7p, off-peak ~19.4p per agileprices.co.uk Jan 2026;
+               Smart battery effective rate ~12p achievable per capture.energy analysis;
+               Ofgem Q1 2026 price cap = 27.69p/kWh electricity, standing charge 54.75p/day (£200/yr)
+               Source: https://www.ofgem.gov.uk/news/changes-energy-price-cap-between-1-january-and-31-march-2026 -->
           <div class="calc-row">
-            <span>Peak rate (daytime)</span>
-            <span>~38p/kWh</span>
+            <span>Annual consumption</span>
+            <span id="calc-kwh">4,500 kWh</span>
           </div>
           <div class="calc-row">
-            <span>Off-peak rate (overnight)</span>
-            <span>~17p/kWh</span>
+            <span>Current bill (Ofgem cap 27.7p/kWh + standing charge)</span>
+            <span id="calc-current">~£122/month</span>
           </div>
           <div class="calc-row">
-            <span>Your consumption at peak</span>
-            <span>58%</span>
+            <span>Effective rate with battery on Agile</span>
+            <span>~12p/kWh</span>
           </div>
           <div class="calc-row">
-            <span>Shifted to off-peak by battery</span>
-            <span>Most of it</span>
+            <span>New electricity bill</span>
+            <span id="calc-new-elec">~£62/month</span>
           </div>
           <div class="calc-row">
-            <span>Rebound effect adjustment</span>
-            <span>Included</span>
+            <span>EnergySave monthly payment</span>
+            <span>£42/month</span>
           </div>
           <div class="calc-row highlight">
-            <span>Net bill reduction</span>
-            <span>~48–52%</span>
+            <span>Your total monthly outgoing</span>
+            <span id="calc-total">~£104/month</span>
           </div>
         </div>
-        <p class="calc-note">The "rebound effect" accounts for slightly higher consumption when prices are lower — a well-documented behavioural response. Our estimate includes this.</p>
+        <p id="savings-outro">You save £18/month from day one while building equity in an asset you'll own outright. After 10 years, the £42 payment disappears — and the full £60/month electricity saving is pure profit for the remaining 5–10 years of battery life.</p>
+        <p class="calc-note">Based on Octopus Agile tariff pricing (Jan 2026 averages: peak ~36p, off-peak ~19p). Effective rate assumes smart battery scheduling during cheapest daily windows. Consumption figures from Ofgem high-usage TDCV and Energy-Review.co.uk. Higher consumer scenario (6,000 kWh) represents households with EVs, heat pumps, or home offices.</p>
       </div>
+
     </div>
   </div>
 </section>
@@ -1444,13 +1628,13 @@ footer {
             <div class="phone-body">
               <div class="phone-card">
                 <div class="phone-card-label">Saved today</div>
-                <div class="phone-card-value">£2.14</div>
-                <div class="phone-card-sub">Battery discharged 11.2 kWh during peak</div>
+                <div class="phone-card-value">£2.00</div>
+                <div class="phone-card-sub">Battery discharged 12.3 kWh during peak</div>
               </div>
               <div class="phone-card-row">
                 <div class="phone-card">
                   <div class="phone-card-label">This month</div>
-                  <div class="phone-card-value">£48.30</div>
+                  <div class="phone-card-value">£56.20</div>
                 </div>
                 <div class="phone-card">
                   <div class="phone-card-label">Charge level</div>
@@ -1484,9 +1668,9 @@ footer {
                 </div>
               </div>
               <div class="phone-card" style="background: var(--green-50); border-color: var(--green-200);">
-                <div class="phone-card-label" style="color:var(--green-700)">Total saved since install</div>
-                <div class="phone-card-value">£1,247</div>
-                <div class="phone-card-sub">14 months and counting</div>
+                <div class="phone-card-label" style="color:var(--green-700)">Electricity savings since install</div>
+                <div class="phone-card-value">£840</div>
+                <div class="phone-card-sub">14 months — that's £60/month off your bill</div>
               </div>
             </div>
           </div>
@@ -1538,7 +1722,7 @@ footer {
       <div class="finance-grid">
         <div class="finance-item">
           <div class="label">Monthly payment</div>
-          <div class="value">£58/month</div>
+          <div class="value">£42/month</div>
         </div>
         <div class="finance-item">
           <div class="label">Term</div>
@@ -1554,7 +1738,7 @@ footer {
         </div>
       </div>
       <div class="finance-note">
-        Financed via unsecured personal loan at 9.8% APR. The £4,426 total package covers the battery, inverter, professional installation, 10-year warranty, and all maintenance. Based on Octopus Agile tariff pricing, the monthly savings for most households exceed the £58 monthly payment — meaning the battery can be cash-flow positive from month one.
+        Financed via unsecured personal loan at 9.8% APR. The £3,300 total package covers the battery, inverter, professional installation, warranty, and all maintenance for the full term. For a typical 4-bedroom household (4,500 kWh/year), you save £18/month from day one — the battery is cash-flow positive immediately. After 10 years, you own the battery and the full electricity saving is yours to keep.
       </div>
     </div>
   </div>
@@ -1631,7 +1815,7 @@ footer {
           <h3>What happens after 10 years?</h3>
           <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
-        <div class="faq-a"><div class="faq-a-inner">You own the battery outright. No more monthly payments. The battery has a 15–20 year expected lifespan, so you'll likely get 5–10 more years of savings with no costs beyond your electricity. At that point, your savings go straight into your pocket.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">You own the battery outright. No more monthly payments. The battery has a 15–20 year expected lifespan, so you'll likely get 7–12 more years of savings with no costs beyond your electricity. At that point, your savings go straight into your pocket.</div></div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
@@ -1652,7 +1836,7 @@ footer {
           <h3>How much will I actually save?</h3>
           <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
-        <div class="faq-a"><div class="faq-a-inner">Savings depend on your consumption and tariff, but the typical household on Octopus Agile saves 40–55% on electricity. Our estimate of "half your bill" is based on the UK average consumption split (58% peak / 42% off-peak) and includes an adjustment for the rebound effect — the tendency to use a bit more when prices are lower. We'll give you a personalised estimate during the home assessment.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">A typical 4-bedroom household (4,500 kWh/year) at the Ofgem price cap pays around £122/month for electricity. With a battery on Octopus Agile, the electricity portion drops to roughly £62/month — about half. Including the £42 EnergySave payment, your total is £104/month — saving £18/month from day one. After 10 years, you own the battery and the full saving (~£60/month) is yours to keep. Higher-usage households with EVs or heat pumps (6,000+ kWh/year) save up to £38/month immediately.</div></div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
@@ -1713,6 +1897,40 @@ function toggleFaq(el) {
   if (!isOpen) {
     item.classList.add('open');
     answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+
+// Savings toggle
+function showScenario(type) {
+  const typical = document.getElementById('scenario-typical');
+  const high = document.getElementById('scenario-high');
+  const btnTypical = document.getElementById('btn-typical');
+  const btnHigh = document.getElementById('btn-high');
+
+  if (type === 'typical') {
+    typical.style.display = 'block';
+    high.style.display = 'none';
+    btnTypical.classList.add('active');
+    btnHigh.classList.remove('active');
+    document.getElementById('savings-title').textContent = 'The real maths — typical 4-bedroom house';
+    document.getElementById('savings-intro').textContent = 'A typical 4-bed UK household uses around 4,500 kWh of electricity per year. At the current Ofgem price cap (27.7p/kWh), that\'s roughly £122/month. With a battery on Octopus Agile, you charge at the cheapest overnight rates and avoid expensive peak pricing — cutting the electricity portion of your bill in half.';
+    document.getElementById('calc-kwh').textContent = '4,500 kWh';
+    document.getElementById('calc-current').textContent = '~£122/month';
+    document.getElementById('calc-new-elec').textContent = '~£62/month';
+    document.getElementById('calc-total').textContent = '~£104/month';
+    document.getElementById('savings-outro').textContent = 'You save £18/month from day one while building equity in an asset you\'ll own outright. After 10 years, the £42 payment disappears — and the full £60/month electricity saving is pure profit for the remaining 5–10 years of battery life.';
+  } else {
+    typical.style.display = 'none';
+    high.style.display = 'block';
+    btnTypical.classList.remove('active');
+    btnHigh.classList.add('active');
+    document.getElementById('savings-title').textContent = 'The real maths — higher consumer household';
+    document.getElementById('savings-intro').textContent = 'Households with EVs, heat pumps, or home offices typically consume around 6,000 kWh per year. At the current Ofgem price cap (27.7p/kWh), that\'s roughly £157/month. A battery cuts the expensive peak portion of that bill dramatically — and you save significantly from day one.';
+    document.getElementById('calc-kwh').textContent = '6,000 kWh';
+    document.getElementById('calc-current').textContent = '~£157/month';
+    document.getElementById('calc-new-elec').textContent = '~£77/month';
+    document.getElementById('calc-total').textContent = '~£119/month';
+    document.getElementById('savings-outro').textContent = 'You save £38/month from day one while building equity in a battery you\'ll own outright. After 10 years, the £42 payment disappears — and the full £80/month electricity saving is pure profit for the remaining 5–10 years of battery life.';
   }
 }
 
